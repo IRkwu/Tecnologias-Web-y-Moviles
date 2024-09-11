@@ -1,40 +1,49 @@
-import './Filters.css'
-import { useState } from "react";
+import './Filters.css';
+import { useState } from 'react';
 
-function Filters() {
-const [minPrice, setMinPrice] = useState(0);
+export default function Filters({ filters, changeFilters }) {
+  const [minPrice, setMinPrice] = useState(filters.price);
 
-const handlePriceChange = (event) => {
-  setMinPrice(event.target.value);
-};
+  const handlePriceChange = (event) => {
+    setMinPrice(event.target.value);
+    changeFilters((prevFilters) => ({
+      ...prevFilters,
+      price: Number(event.target.value),
+    }));
+  }
 
-return (
-  <section className="filter">
-    <div>
-      <label htmlFor="price">Price:</label>
-      <input
-        id="price"
-        type="range"
-        min="0"
-        max="10000"
-        value={minPrice}
-        onChange={handlePriceChange}
-      />
-      <span>${minPrice}</span>
-    </div>
-    <div>
-      <label htmlFor="Category">Select Category:</label>
-      <select id="category">
-        <option value = "Category1">all</option>
-        <option value = "Category2">hola1</option>
-        <option value = "Category3">hola2</option>
-        <option value = "Category4">hola3</option>
-        <option value = "Category5">hola4</option>
-      </select> 
-    </div>
-  </section>
-);
+  const handleCategoryChange = (event) => {
+    changeFilters((prevFilters) => ({
+      ...prevFilters,
+      category: event.target.value,
+    }));
+  }
 
+  return (
+    <section className="filters">
+      <div>
+        <label htmlFor="price">Price:</label>
+        <input
+          id="price"
+          type="range"
+          min="0"
+          max="1000"
+          value={minPrice}
+          onChange={handlePriceChange}
+        />
+        <span>${minPrice}</span>
+      </div>
+
+      <div>
+        <label htmlFor="category">Category:</label>
+        <select id="category" onChange={handleCategoryChange}>
+          <option value="all">All</option>
+          <option value="beauty">Beauty</option>
+          <option value="fragrances">Fragrances</option>
+          <option value="furniture">Furniture</option>
+          <option value="groceries">Groceries</option>
+        </select>
+      </div>
+    </section>
+  );
 }
-export default Filters;
-  
