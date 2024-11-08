@@ -9,7 +9,7 @@ const useFetchSubjects = () => {
     setIsLoading(true);
     setError(null);
 
-    fetch('src/mocks/subjects.json')
+    fetch('subjects.json')
       .then(response => response.json())
       .then(data => setData(data.subjects))
       .catch(error => setError(error))
