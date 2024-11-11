@@ -2,6 +2,7 @@
     font-size: 16px;
     font-weight: 600;
     background-color: #c4c4c4;
+    overflow: hidden;
   }
   
 .table-cell {
@@ -9,4 +10,6 @@
   font-weight: 500;
   color: #333131;
   cursor: pointer;
+  overflow: hidden;
+  height: 70px;
 }

@@ -24,7 +24,7 @@ function MallaTable() {
   // Obtener y actualizar el estilo de la celda
   const getCellStyle = (subject) => {
     if (hoveredSubject && hoveredSubject.name === subject.name) {
-      return { backgroundColor: '#E0E0E0', border: '2px solid black'};
+      return { backgroundColor: '#E0E0E0'};
     }
 
     if (!selectedSubject) return {};
@@ -58,7 +58,6 @@ function MallaTable() {
             style={subject ? getCellStyle(subject) : {}}
             onClick={() => {
               setSelectedSubject(subject);
-              setHoveredSubject(null);
             }}
             onMouseEnter={() => setHoveredSubject(subject)}
           >

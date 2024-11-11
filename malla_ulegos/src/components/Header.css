@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #0055b7;
+  height: 70px;
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto;
+  transform: translateX(-70px);
+}
+
+.logo-image {
+  max-width: 120px;
+  margin-left: 20px;
+}

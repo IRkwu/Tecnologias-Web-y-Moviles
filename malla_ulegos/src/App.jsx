@@ -1,14 +1,19 @@
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, Box } from "@mantine/core";
 import MallaTable from "./components/MallaTable";
-import { Box } from "@mantine/core";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <MantineProvider>
-      <Box p="lg">
-        <MallaTable />
-      </Box>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header />
+        <Box p="lg" style={{ flex: 1 }}>
+          <MallaTable />
+        </Box>
+        <Footer />
+      </div>
     </MantineProvider>
   );
 }
