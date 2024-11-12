@@ -5,3 +5,5 @@ Repositorio de la página web creada para la asignatura de Tecnologías Web y M�
 - [Link a la página](https://mallacurricular-icinf.netlify.app/)
 
 ## Desarrollador: Alvaro Ramos Andler
+
+**Modo chistoso:** Konami Code
