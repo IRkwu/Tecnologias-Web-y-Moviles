@@ -58,6 +58,7 @@ function MallaTable() {
             style={subject ? getCellStyle(subject) : {}}
             onClick={() => {
               setSelectedSubject(subject);
+              setHoveredSubject(null);
             }}
             onMouseEnter={() => setHoveredSubject(subject)}
           >
